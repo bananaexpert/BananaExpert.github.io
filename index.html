@@ -104,26 +104,26 @@
             }
         }
     </style>
-    <script>
+   <script>
         function searchBanana() {
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('banana-card');
             let container = document.querySelector('.container');
             
-            let hasResult = false;
+            let filteredCards = [];
             for (let card of cards) {
                 let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
                 if (title.includes(input)) {
-                    card.style.display = 'block';
-                    hasResult = true;
-                } else {
-                    card.style.display = 'none';
+                    filteredCards.push(card);
                 }
             }
             
-            if (input === "") {
+            container.innerHTML = "";
+            if (filteredCards.length > 0) {
+                filteredCards.forEach(card => container.appendChild(card));
+            } else {
                 for (let card of cards) {
-                    card.style.display = 'block';
+                    container.appendChild(card);
                 }
             }
         }
