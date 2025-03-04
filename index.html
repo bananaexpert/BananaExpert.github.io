@@ -39,6 +39,17 @@
             font-size: 1.2em;
             color: #7b5e00;
         }
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-container input {
+            width: 50%;
+            padding: 10px;
+            font-size: 1em;
+            border: 2px solid #e0c77b;
+            border-radius: 10px;
+        }
         .container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -102,6 +113,9 @@
             <p>Your ultimate guide to exploring banana varieties from around the world.</p>
         </div>
     </header>
+    <div class="search-container">
+        <input type="text" id="searchInput" onkeyup="searchBanana()" placeholder="ค้นหาสายพันธุ์กล้วย...">
+    </div>
     <div class="container">
         <div class="banana-card">
             <img src="image/banana1.jpg" alt="Cavendish">
