@@ -114,8 +114,24 @@
             .banana-card {
                 width: 90%;
                 max-width: none;
-    }
-}
+            }
+        }
+        @media (max-width: 900px) {
+            .container {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
+                justify-content: center; /* จัดให้อยู่ตรงกลาง */
+                gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
+                padding: 20px;
+            }
+
+            .banana-card {
+                width: 80%; /* ปรับให้กว้างขึ้นแต่ไม่เต็มจอ */
+                max-width: 300px; /* จำกัดขนาดสูงสุดเพื่อให้ดูดี */
+                margin: auto; /* จัดให้อยู่ตรงกลางของแต่ละคอลัมน์ */
+            }
+        }
+
 
     </style>
    <script>
