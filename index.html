@@ -55,7 +55,7 @@
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             padding: 20px;
-            margin-top: 40px; 
+            margin-top: 40px;  /* เพิ่มระยะห่างระหว่างแบนเนอร์และการ์ด */
         }
         .banana-card {
             background-color: #f7ecc5;
@@ -110,15 +110,23 @@
     </style>
    <script>
         function searchBanana() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('banana-card');
             let input = document.getElementById('searchInput').value.toLowerCase();
-              let cards = document.getElementsByClassName('banana-card');
+            let cards = document.getElementsByClassName('banana-card');
 
-        for (let card of cards) {
-            let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
-            if (input === "" || title.includes(input)) {
-                card.style.display = "flex"; 
-           } else {
-                card.style.display = "none"; 
+    for (let card of cards) {
+        let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+        if (input === "" || title.includes(input)) {
+            card.style.display = "flex"; // แสดงการ์ดที่ตรงกับผลลัพธ์
+        } else {
+            card.style.display = "none"; // ซ่อนการ์ดที่ไม่ตรง
+            for (let card of cards) {
+                let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (input.trim() === "" || title.includes(input)) {
+                    card.style.display = "flex"; // แสดงการ์ด
+                } else {
+                    card.style.display = "none"; // ซ่อนการ์ดที่ไม่ตรง
         }
     }
 }
@@ -190,5 +198,4 @@
     </div>
 </body>
 </html>
-
 
