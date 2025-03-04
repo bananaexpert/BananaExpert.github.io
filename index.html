@@ -113,7 +113,14 @@
             let input = document.getElementById('searchInput').value.toLowerCase();
             let cards = document.getElementsByClassName('banana-card');
             let container = document.querySelector('.container');
-            
+
+            container.innerHTML = ""; 
+
+            if (input === "") {
+                for (let card of cards) {
+                    container.appendChild(card);
+            }
+        } else {
             let filteredCards = [];
             for (let card of cards) {
                 let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
@@ -121,16 +128,10 @@
                     filteredCards.push(card);
                 }
             }
-            
-            container.innerHTML = "";
-            if (filteredCards.length > 0) {
-                filteredCards.forEach(card => container.appendChild(card));
-            } else {
-                for (let card of cards) {
-                    container.appendChild(card);
-                }
-            }
-        }
+            filteredCards.forEach(card => container.appendChild(card));
+    }
+}
+
     </script>
 </head>
 <body>
