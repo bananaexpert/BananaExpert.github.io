@@ -93,7 +93,7 @@
         .banana-card button:hover {
             background-color: #d3b668;
         }
-        @media (max-width: 600px) {
+       @media (max-width: 600px) {
             header h1 {
                 font-size: 2em;
             }
@@ -116,23 +116,22 @@
                 max-width: none;
             }
         }
+
         @media (max-width: 900px) {
             .container {
                 display: grid;
                 grid-template-columns: repeat(2, 1fr); /* แบ่งเป็น 2 คอลัมน์ */
-                justify-content: center; /* จัดให้อยู่ตรงกลาง */
                 gap: 20px; /* เพิ่มระยะห่างระหว่างการ์ด */
                 padding: 20px;
+                place-items: center; /* จัดให้อยู่ตรงกลาง */
             }
 
             .banana-card {
-                width: 80%; /* ปรับให้กว้างขึ้นแต่ไม่เต็มจอ */
-                max-width: 300px; /* จำกัดขนาดสูงสุดเพื่อให้ดูดี */
+                width: 90%; /* ปรับให้กว้างขึ้นเกือบเต็มจอ */
+                max-width: 400px; /* กำหนดขนาดสูงสุดเพื่อให้ดูดี */
                 margin: auto; /* จัดให้อยู่ตรงกลางของแต่ละคอลัมน์ */
             }
         }
-
-
     </style>
    <script>
         function searchBanana() {
