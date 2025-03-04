@@ -110,15 +110,15 @@
     </style>
    <script>
         function searchBanana() {
-    let input = document.getElementById('searchInput').value.toLowerCase();
-    let cards = document.getElementsByClassName('banana-card');
+            let input = document.getElementById('searchInput').value.toLowerCase();
+            let cards = document.getElementsByClassName('banana-card');
 
-    for (let card of cards) {
-        let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
-        if (input === "" || title.includes(input)) {
-            card.style.display = "flex"; // แสดงการ์ดที่ตรงกับผลลัพธ์
-        } else {
-            card.style.display = "none"; // ซ่อนการ์ดที่ไม่ตรง
+            for (let card of cards) {
+                let title = card.getElementsByTagName('h3')[0].innerText.toLowerCase();
+                if (input.trim() === "" || title.includes(input)) {
+                    card.style.display = "flex"; // แสดงการ์ด
+                } else {
+                    card.style.display = "none"; // ซ่อนการ์ดที่ไม่ตรง
         }
     }
 }
